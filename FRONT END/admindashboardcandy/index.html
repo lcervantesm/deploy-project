@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <style>
+
+    @import url("https://fonts.googleapis.com/css?family=Pacifico");
+
+body {
+  background-color: #f0f0f0;
+}
+h4, h5 {
+  font-family: 'Pacifico', cursive;
+}
+
+h4 {
+  color : #40a8a7;
+  /* Turquesa oscuro: color : #0D8080;*/
+}
+
+h5 {
+  /*color : #40a8a7;*/
+  color : #FF9900;
+}
+
+nav .nav-wrapper form, nav .nav-wrapper form .input-field{
+height: 100%;
+}
+
+.card-info, .card__meta a {
+    color: #3299BB !important;
+    display: inline-flex;
+    vertical-align: middle;
+    line-height: 2;
+    font-size: 1rem;
+}
+.card__meta i.small {
+    font-size: 1.5rem;
+}
+.card .card-content .card-title {
+    line-height: 34px;
+}
+.card__date {
+    background: #08c;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 13px;
+    font-weight: bold;
+    padding-top: 7px;
+}
+.card__date__day {
+  display: block;
+  font-size: 14px;
+}
+.card__date__month {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.card .card-content .card-title {
+    color: #0D8080 !important;
+    line-height: 18px;
+}
+
+.card .card-title {
+    
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card .card-content p{
+  color: #1E1E1E;
+  font-size: 13px;
+}
+
+.collapsible{
+  background: #fff;
+}
+
+.card-row {
+  margin-bottom: 4px;
+    margin-top: 4px;
+}
+.card-action i {
+    vertical-align: text-bottom;
+    font-size: 21px;
+}
+
+
+
+.collapsible-header {
+    background-color: #3299BB;
+    color: #fff;
+}
+
+.filter-container ul {
+    padding: 1rem 2rem;
+}
+
+.filter-container ul li {
+    display: block;
+    padding: 16px 0 0;
+}
+
+.search-title-filter {
+  background-color: #3299BB;
+  color: #fff;
+}
+
+nav  {
+    background-color: #40a8a7;
+    border-color: #E7E7E7;
+    
+}
+
+nav ul>li>a, nav .brand-logo  {
+  color: #fff;
+}
+
+nav .brand-logo {
+  font-size: 1.4em !important;
+}
+
+#container {
+  padding: 20px 10px;
+}
+
+  </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <nav>
+          <div class="nav-wrapper">
+            <a class="brand-logo" href="#"> &nbsp; <img src="https://lh3.googleusercontent.com/-Tt8RlULsFDw/W_XTnJ919BI/AAAAAAAAdEQ/WKfBKBRlRK0zWIIOTvt1mq7JischHa9BwCL0BGAYYCw/h314/2018-11-21.png" alt="Girl in a jacket" width="180" height="60"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#modal1" class="modal-trigger" data-target="modal1">Create Survey</a></li>
+              <li><a href="collapsible.html">Log Out</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      
+      <div id="container">
+        <div class="row">
+          <div class="col s12 m12 l3">
+            <ul class="collapsible" data-collapsible="expandable">
+              <li>
+                <div class="collapsible-header active"><i class="material-icons">search</i>Your surveys</div>
+                <div class="collapsible-body filter-container">
+      
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="event-type-filter" class="event-type-filter filled-in" id="socials" checked="checked" value="social" />
+                      <label for="socials">JOB APPLICATION</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="event-type-filter" class="event-type-filter  filled-in" id="classes" checked="checked" value="class" />
+                      <label for="classes">BOOKING</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="event-type-filter" class="event-type-filter filled-in" id="festival-event" checked="checked" value="festival" />
+                      <label for="festival-event">EDUCATION LEADS</label>
+                    </li>
+                  </ul>
+      
+                </div>
+              </li>
+            </ul>
+      
+          </div>
+      
+          <!-- Cards container -->
+          <div class="col s12 m12 l9">
+            <h4>Results</h4>
+            <div id="card-container" class="row">
+              <!-- Col: Card 1 -->
+              <div class="col s12 m6 l4">
+                <div class="card">
+                  <div class="card-content white-text">
+                    <div class="card__date">
+                      <span class="card__date__day">21</span>
+                      <span class="card__date__month">NOV</span>
+                    </div>
+                    <span class="card-title grey-text text-darken-4">JOB APLICATION</span>
+                    <hr>
+                    <div class="row card-row">
+                        <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 1</span>
+                      </div>
+                    <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                    <div class="row card-row">
+                        <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 2</span>
+                    </div>
+                    <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#"><i class="material-icons">&nbsp;message</i>Send Sms</a>
+                    <a href="#" class="card-action-right"><i class="material-icons">&nbsp;share</i>SHARE</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End of col -->
+              <!-- Col: Card 2 -->
+              <div class="col s12 m6 l4">
+                  <div class="card">
+                    <div class="card-content white-text">
+                      <div class="card__date">
+                        <span class="card__date__day">21</span>
+                        <span class="card__date__month">NOV</span>
+                      </div>
+                      <span class="card-title grey-text text-darken-4">BOOKING</span>
+                      <hr>
+                      <div class="row card-row">
+                          <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 1</span>
+                        </div>
+                      <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                      <div class="row card-row">
+                          <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 2</span>
+                      </div>
+                      <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#"><i class="material-icons">&nbsp;message</i>Send Sms</a>
+                      <a href="#" class="card-action-right"><i class="material-icons">&nbsp;share</i>SHARE</a>
+                    </div>
+                  </div>
+                </div>
+              <!-- Col: Card 3 -->
+              <div class="col s12 m6 l4">
+                  <div class="card">
+                    <div class="card-content white-text">
+                      <div class="card__date">
+                        <span class="card__date__day">21</span>
+                        <span class="card__date__month">NOV</span>
+                      </div>
+                      <span class="card-title grey-text text-darken-4">EDUCATION LEADS</span>
+                      <hr>
+                      <div class="row card-row">
+                          <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 1</span>
+                        </div>
+                      <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                      <div class="row card-row">
+                          <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 2</span>
+                      </div>
+                      <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#"><i class="material-icons">&nbsp;message</i>Send Sms</a>
+                      <a href="#" class="card-action-right"><i class="material-icons">&nbsp;share</i>SHARE</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Col: Card 3 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                      <div class="card-content white-text">
+                        <div class="card__date">
+                          <span class="card__date__day">21</span>
+                          <span class="card__date__month">NOV</span>
+                        </div>
+                        <span class="card-title grey-text text-darken-4">Adalberto Loya Villalobos</span>
+                        <hr>
+                        <div class="row card-row">
+                            <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 1</span>
+                          </div>
+                        <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                        <div class="row card-row">
+                            <span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;Question 2</span>
+                        </div>
+                        <p class="card-subtitle grey-text text-darken-2"> I have 3 years of experience in marketing and operations.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#"><i class="material-icons">&nbsp;message</i>Send Sms</a>
+                        <a href="#" class="card-action-right"><i class="material-icons">&nbsp;share</i>SHARE</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js">
+//Init select inputs
+$('select').material_select();
+
+
+//Searcher
+$( "#search" ).keyup(function( event ) {
+  var value = $(this).val();
+  if ( event.which == 13 ) {
+     event.preventDefault();
+  }
+  //console.log("Filter..."+value);
+  //renderCards(filterByAttr("title",value, data));
+  renderCards(applyFilters());
+});
+
+function applyTitleFilter(data){
+  var value = $('#search').val();
+  return filterByAttr("title",value, data);
+}
+
+function filterByAttr(attr, value, data) {
+  //console.log(data);
+  var value = value.toLowerCase();
+  return $.grep(data, function(n, i) {
+    return n[attr].toLowerCase().indexOf(value) != -1;
+
+  });
+}
+
+
+function renderCards(data) {
+  console.log("RENDERING");
+  var html = '';
+  $.each(data, function(key, value) {
+
+    html += '<div class="col s12 m6 l4"><div class="card"><div class="card-content white-text"><div class="card__date"><span class="card__date__day">23</span><span class="card__date__month">Mai</span></div><div class="card__meta"><a href="#"><i class="small material-icons">room</i>' + value.city + '</a></div><span class="card-title grey-text text-darken-4">' + value.title + '</span><p class="card-subtitle grey-text text-darken-2">' + value.description + '</p><span class="text-darken-2 card-info"><i class="small material-icons">label</i>&nbsp;' + value.styles + '</span></div><div class="card-action"><a href="#"><i class="material-icons">&nbsp;language</i>VISIT WEB</a><a href="#" class="card-action-right"><i class="material-icons">&nbsp;room</i>FIND</a> </div></div>';
+
+    html += '</div>';
+  });
+  $('#card-container').html(html);
+
+}
+
+
+renderCards(data);
+
+  $.each(countries, function (i, item) {
+      
+      selectHTML.append($('<option>', { 
+          value: item.code,
+          text : item.name 
+      }));
+  });
+  selectHTML.material_select();
+
+initCountrySelect();
+
+//FILTER EVENTS:
+$("#country-select").on('change', function() {
+  var value = $(this).val();
+  console.log("Filter COUNTRY: "+value);
+  renderCards(applyFilters());
+  //renderCards(filterByAttr("country-code", value, data));
+});
+
+$(".event-type-filter").change(function() {
+  renderCards(applyFilters());
+  //renderCards(applyEventTypeFilter());
+});
+
+function applyCountryFilter(data){
+  var value = $("#country-select").val();
+  if (value == 'all'){
+    value = '';
+  }
+  return filterByAttr("country-code", value, data);
+}
+function applyEventTypeFilter(data){
+  var result = [];
+      $('input[name="event-type-filter"]:checked').each(function() {
+         console.log(this.value); 
+         var filtered = filterByAttr("event_type", this.value, data);
+        result = mergeJSONObjectsRemovingDuplicates(result,filtered);
+      });
+  return result;
+}
+
+function applyFilters(){
+  var eventArray = [];
+  
+  console.log("FILTERS:");
+  console.log($('#search').val());
+  console.log($("#country-select").val());
+  console.log($('input[name="event-type-filter"]:checked').serialize());
+  
+  eventArray = applyEventTypeFilter(data);
+  eventArray = applyCountryFilter(eventArray);
+  eventArray = applyTitleFilter(eventArray);
+  return eventArray;
+}
+
+
+//HELPER
+function mergeJSONObjectsRemovingDuplicates(arr1, arr2){
+  $.merge(arr1, arr2);
+
+  var existingIDs = [];
+  arr1 = $.grep(arr1, function(v) {
+      if ($.inArray(v.id, existingIDs) !== -1) {
+          return false;
+      }
+      else {
+          existingIDs.push(v.id);
+          return true;
+      }
+  });
+  return arr1;
+}
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</body>
+
+</html>
